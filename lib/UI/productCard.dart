@@ -1,16 +1,20 @@
 //import 'package:flutter/material.dart';
-//import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-//import 'package:rento/product_list.dart';
+////import 'Custom_Icons.dart';
+//import 'package:rento/product list.dart';
 //
-//class initalScreen extends StatefulWidget {
+//void main() => runApp(MaterialApp(
+//  home: MyApp(),
+//  debugShowCheckedModeBanner: false,
+//));
+//
+//class MyApp extends StatefulWidget {
 //  @override
-//  _initalScreenState createState() => new _initalScreenState();
+//  _MyAppState createState() => new _MyAppState();
 //}
 //
-//class _initalScreenState extends State<initalScreen> {
+//class _MyAppState extends State<MyApp> {
 //  int _currentIndex = 0;
-//  int _page = 0;
-//  GlobalKey _bottomNavigationKey = GlobalKey();
+//
 //  Widget _buildGradientContainer(double width, double height) {
 //    return Align(
 //      alignment: Alignment.topRight,
@@ -48,6 +52,22 @@
 //    );
 //  }
 //
+//  Widget _buildTitle(double height) {
+//    return Positioned(
+//      top: height * .2,
+//      left: 30.0,
+//      child: Column(
+//        crossAxisAlignment: CrossAxisAlignment.start,
+//        children: <Widget>[
+//          Text("Wooden Armchair",
+//              style: TextStyle(fontSize: 28.0, fontFamily: "Montserrat-Bold")),
+//          Text("Lorem Ipsem",
+//              style: TextStyle(fontSize: 16.0, fontFamily: "Montserrat-Medium"))
+//        ],
+//      ),
+//    );
+//  }
+//
 //  @override
 //  Widget build(BuildContext context) {
 //    return new Scaffold(
@@ -62,11 +82,11 @@
 //            children: <Widget>[
 //              _buildGradientContainer(width, height),
 //              _buildAppBar(),
-////              _buildTitle(height),
+//              _buildTitle(height),
 //              Align(
-//                alignment: Alignment.centerRight,
+//                alignment: Alignment.bottomCenter,
 //                child: SizedBox(
-//                  height: height * .4,
+//                  height: height * .6,
 //                  child: ListView.builder(
 //                    itemCount: images.length,
 //                    scrollDirection: Axis.horizontal,
@@ -75,7 +95,7 @@
 //                      return Padding(
 //                        padding: EdgeInsets.only(left: 35.0, bottom: 60.0),
 //                        child: SizedBox(
-//                          width: 100.0,
+//                          width: 200.0,
 //                          child: Stack(
 //                            fit: StackFit.expand,
 //                            children: <Widget>[
@@ -102,7 +122,7 @@
 //                                  Image.asset(
 //                                    images[index],
 //                                    width: 172.5,
-//                                    height: 159.0,
+//                                    height: 199.0,
 //                                  ),
 //                                  SizedBox(
 //                                    height: 12.0,
@@ -157,23 +177,152 @@
 //          );
 //        },
 //      ),
-//      bottomNavigationBar: CurvedNavigationBar(
-//        color: Color(0xFF416165),
-//        backgroundColor: Color(0xFFEDF7F6),
-//        items: <Widget>[
-//          Icon(Icons.home, size: 20,color: Color(0xFFCAD2C5),),
-//          Icon(Icons.location_on, size: 20,color: Color(0xFFCAD2C5),),
-//          Icon(Icons.notifications, size: 20,color: Color(0xFFCAD2C5),),
-//          Icon(Icons.people, size: 20,color: Color(0xFFCAD2C5),),
-//        ],
+//      bottomNavigationBar: BottomNavigationBar(
+//        selectedItemColor: Colors.black,
 //        onTap: (index) {
 //          setState(() {
-//            _page = index;
+//            _currentIndex = index;
 //          });
 //        },
+//        currentIndex: _currentIndex,
+//        items: [
+//          BottomNavigationBarItem(
+//              icon: Icon(Icons.panorama_horizontal),
+//              title: Container(
+//                height: 0.0,
+//              )),
+//          BottomNavigationBarItem(
+//              icon: Icon(Icons.bookmark_border),
+//              title: Container(
+//                height: 0.0,
+//              ))
+//        ],
 //      ),
+//      floatingActionButton: Container(
+//        width: 65.0,
+//        height: 65.0,
+//        decoration: BoxDecoration(
+//            color: Color(0xFFfa7b58),
+//            shape: BoxShape.circle,
+//            boxShadow: [
+//              BoxShadow(
+//                  color: Color(0xFFf78a6c).withOpacity(.6),
+//                  offset: Offset(0.0, 10.0),
+//                  blurRadius: 10.0)
+//            ]),
+//        child: RawMaterialButton(
+//          shape: CircleBorder(),
+//          child: Icon(
+//            Icons.add,
+//            size: 35.0,
+//            color: Colors.white,
+//          ),
+//          onPressed: () {},
+//        ),
+//      ),
+//      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 //    );
 //  }
 //}
 //
 //
+////import 'package:flutter/material.dart';
+////import 'package:flutter_screenutil/flutter_screenutil.dart';
+////
+////import '../product list.dart';
+////
+////class ProductCard extends StatelessWidget {
+////  List<Widget> product() {
+////    List<Widget> productList = new List();
+////
+////    for (int i = 0; i < 3; i++) {
+////      var productItem = Padding(
+////        padding: EdgeInsets.symmetric(vertical: 25.0, horizontal: 12.0),
+////        child: Container(
+////          height: 220.0,
+////          width: 135.0,
+////          decoration: BoxDecoration(
+////              borderRadius: BorderRadius.circular(20.0),
+////              color: Colors.white,
+////              boxShadow: [
+////                BoxShadow(
+////                    color: Colors.black12,
+////                    blurRadius: 10.0,
+////                    offset: Offset(0.0, 10.0))
+////              ]),
+////          child: Column(
+////            children: <Widget>[
+////              ClipRRect(
+////                borderRadius: BorderRadius.only(
+////                    topLeft: Radius.circular(20.0),
+////                    topRight: Radius.circular(20.0)),
+////                child: Image.asset(
+////                  images[i],
+////                  width: double.infinity,
+////                  height: 130.0,
+////                  fit: BoxFit.cover,
+////                ),
+////              ),
+////              Padding(
+////                padding: const EdgeInsets.only(top: 4.0, left: 8.0, right: 8.0),
+////                child: Text(titles[i],
+////                    textAlign: TextAlign.center,
+////                    style: TextStyle(
+////                        fontSize: 16.0, fontFamily: "SF-Pro-Display-Bold")),
+////              ),
+//////              Padding(
+//////                padding: EdgeInsets.only(top: 3.0),
+//////                child: Text(i == 0 ? "Season 2" : ""),
+//////              )
+////            ],
+////          ),
+////        ),
+////      );
+////      productList.add(productItem);
+////    }
+////    return productList;
+////  }
+////
+////  @override
+////  Widget build(BuildContext context) {
+////    return Container(
+////      width: ScreenUtil().setWidth(642),
+////      child: Container(
+////        height: 250.0,
+////        child: ListView(
+////          scrollDirection: Axis.horizontal,
+////          children: product(),
+////        ),
+////
+//////      Stack(
+//////        children: <Widget>[
+//////          Align(
+//////            alignment: Alignment.bottomCenter,
+//////            child: Padding(
+//////              padding: EdgeInsets.only(bottom: ScreenUtil().setWidth(40)),
+//////              child: Container(
+//////                width: ScreenUtil().setWidth(620),
+//////                height: ScreenUtil().setHeight(990),
+//////                decoration: BoxDecoration(
+//////                  gradient: LinearGradient(
+//////                      colors: [Colors.pinkAccent, Colors.pink],
+//////                      begin: Alignment.topRight,
+//////                      end: Alignment.bottomLeft),
+//////                  boxShadow: [
+//////                    BoxShadow(
+//////                      color: Colors.black12,
+//////                      offset: Offset(0,8),
+//////                      blurRadius: 8,
+//////                    )
+//////                  ],
+//////                  borderRadius: BorderRadius.circular(30)
+//////                ),
+//////              ),
+//////            ),
+//////          )
+//////        ],
+//////      ),
+////      ),
+////    );
+////  }
+////}

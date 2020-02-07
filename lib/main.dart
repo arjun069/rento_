@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:rento/UI/initialScreen.dart';
+import 'package:rento/UI/login.dart';
 
-void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-//      theme: ThemeData(
-//        primarySwatch: Colors.black,
-//      ),
-      home: FirstScreen(),
-    );
-  }
-}
-
+void main() => runApp(MaterialApp(
+  home: Profile(),
+  debugShowCheckedModeBanner: false,
+));
 
