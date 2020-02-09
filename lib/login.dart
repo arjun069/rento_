@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:rento/UI/initialScreeen.dart';
 import 'req.dart';
 
-class HomePage extends StatefulWidget {
+class login extends StatefulWidget {
+  static final String id = 'login';
   @override
-  _HomePageState createState() => _HomePageState();
+  _loginState createState() => _loginState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _loginState extends State<login> {
   @override
   final username = TextEditingController();
   final password = TextEditingController();
